@@ -30,7 +30,11 @@ def process_data(data: list, report_type: str) -> dict:
     report_data = {}
     for row in data:
         country = row['country']
-        value = float(row[report_type])
+        try:
+            value = float(row[report_type])
+        except KeyError:
+            print('Wrongly enter the --report (Не праильно введен --report)')
+            continue
         if country not in report_data:
             report_data[country] = []
         report_data[country].append(value)

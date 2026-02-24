@@ -3,7 +3,7 @@ from core import main
 
 parser = argparse.ArgumentParser()
 
-parser.add_argument('--file', type=str, dest='file_names', nargs='+',
+parser.add_argument('--files', type=str, dest='file_names', nargs='+',
                     help='file names',)
 parser.add_argument('--report', dest='report', help='report type')
 
